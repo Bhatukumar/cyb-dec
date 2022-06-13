@@ -1,18 +1,39 @@
 *{
     margin: 0;
-    padding: 0;
+    padding:0;
 }
 html{
     scroll-behavior: smooth;
 }
-body {
+body{
     background-color: black;
 }
-
-h1 {
-    text-align: center;
-    background-color: blueviolet;
+/* heading css */
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: white;
 }
-.wrapper {
-    align-self: center;
+.name{
+    font-size: 250%;
+    padding-top: 2%;
+}
+.center{
+    height: 400px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    color: aliceblue;
+    
+}
+.center1{
+    align-items: center;
+    margin: auto;
+    text-align: left;
+}
+.text{
+    align-items: center;
+    text-align: center;
 }
