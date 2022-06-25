@@ -42,28 +42,80 @@ display: flex;
 
 .nav-list ul li{
     list-style: none;
-    margin: 25px 50px;
+    margin: 20px 50px;
 }
 
 .nav-list li a{
     text-decoration: none;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 /* main body style   */
-.body1 {
-    background-color: skyblue;
-    height: 30vw;
-    width: 100%;
+.main-body {
     display: flex;
-    align-items: center;
+    background-color: lightgrey;
+    height: 33vw;
+    width: 100%;
+    justify-content: center ;
+    align-items: center; 
 }
+
+.box{
+    background-color: grey;
+    width: 600px;
+    border-radius: 5px;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+
 .textcontent{
-    background-color: blanchedalmond;
-    height: 300px;
-    width: 500px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* background-color: blanchedalmond; */
+    height:300px;
+    
+}
+
+.form-control{
+    height: 70%;
     margin: auto;
+    width: 90%;
+    border-radius: 10px;
+    line-height: 2;
+    border: 2px solid black;
+
+}
+/* .form-control:focus-visible{
+    outline-style: auto;
+} */
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    /* background-color: lawngreen; */
+    margin: auto;
+}
+.button{
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.btn1{
+    background-color: greenyellow;
+
+}
+.btn2{
+    background-color: rgba(77, 230, 241, 0.827);
+}
+.buttons button li{
+    margin: 5px;
+    text-decoration: none;
+    list-style: none;
+    
 }
 
 
@@ -72,50 +124,56 @@ display: flex;
 
 
 .footer {
-    background-color: brown;
     height: 10vw;
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 50px;
+    justify-content: space-around;
+    background-color:rgba(10, 9, 16, 0.852);
+}
+
+
+.flogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+    width: 30%;
+    height: 80%;
+    border-radius: 10px;
 }
 
 .logofooter {
-    background-color: aliceblue;
-    height: 120px;
-    width: 350px;
+}
+.logofooter a{
+    text-decoration: none;
+    font-size: 40px;
 }
 
-
-
-
-/* heading css */
-/*
-.container{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    color: white;
-}
-.name{
-    font-size: 250%;
-    padding-top: 2%;
-}
-.center{
-    height: 400px;
+.fnav{
     display: flex;
+    /* justify-content: center; */
     align-items: center;
-    margin: auto;
-    color: aliceblue;
-    
+    background-color: turquoise;
+    width: 60%;
+    height: 80%;
+    border-radius: 10px;
 }
-.center1{
-    align-items: center;
-    margin: auto;
-    text-align: left;
+
+.fnav-list{
+
 }
-.text{
-    align-items: center;
-    text-align: center;
-} */
+.fnav-list ul li{
+    list-style: none;
+    margin: auto;
+
+}
+.fnav-list ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+
+
+
