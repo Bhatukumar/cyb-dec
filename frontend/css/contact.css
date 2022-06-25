@@ -1,81 +1,79 @@
 *{
     margin: 0;
-    padding:0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-body{
-    background-color: rgb(66, 65, 65);
-}
-.navbar{
-    
-    width: 100%;
-    background-color: black;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px; 
+    padding: 0;
+
 }
 
-.navigation{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100px;
+/* navigation style */
+
+.navbar{
+display: flex;
+}
+
+.logo-space{
+    display: flex;
+    background-color: black;
+    width: 30%;
+    text-align: center;
 }
 .logo{
+    list-style: none;
     margin: auto;
 }
 .logo a{
-    color: aliceblue;
+    text-decoration: none;
+    color: white;
     font-size: 30px;
+
 }
-.navbar nav{
-    margin-right: 150px;
+
+.nav-list{
+    display: flex;
+    justify-content:flex-end;
+    background-color: black;
+    width: 70%;
 }
-.navbar nav ul li{
+.nav-list ul{
+    display: flex; 
+    justify-content: space-between;
+}
+
+.nav-list ul li{
     list-style: none;
-    display: inline;
-    padding-right: 30px;
-    padding-left: 40px;
-    
+    margin: 25px 50px;
 }
-.navbar nav li a{
+
+.nav-list li a{
+    text-decoration: none;
     color: white;
     font-size: 30px;
-    margin: 20px;
 }
+  
 
-
-
-
-
-
-/* heading css */
-/*
-.container{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    color: white;
-}
-.name{
-    font-size: 250%;
-    padding-top: 2%;
-}
-.center{
-    height: 400px;
+/* main body style  */
+.body1 {
+    background-color: skyblue;
+    height: 30vw;
+    width: 100%;
     display: flex;
     align-items: center;
-    margin: auto;
-    color: aliceblue;
-    
 }
-.center1{
+
+/* footer style  */
+
+
+
+.footer {
+    background-color: brown;
+    height: 10vw;
+    width: 100%;
+    display: flex;
     align-items: center;
-    margin: auto;
-    text-align: left;
+    padding: 50px;
 }
-.text{
-    align-items: center;
-    text-align: center;
-} */
+
+.logofooter {
+    background-color: aliceblue;
+    height: 120px;
+    width: 350px;
+}
