@@ -21,20 +21,28 @@
       </div>
     </nav>
     <div class="main-body">
-        <div class="box ">
-            <div class="textcontent ">
-                <textarea class="form-control" id="textarea1" name="textarea" rows="4" spellcheck="" placeholder="Enter Your Cipher Here ... "></textarea>
+        <form  method="post" action="/input">
+            <div class="box">
+
+                <p>Input</p>
+                <div class="textcontent ">
+                    <textarea class="form-control" id="textarea1"  name="textarea" rows="4" spellcheck="" placeholder="Enter Your Cipher Here ... "></textarea>
+                </div>
             </div>
-            <div class="buttons ">
-                <button class="button btn1"><li>Submit</li> </button>
-                <button class="button btn2"><li>Clear</li></button>
+            
+            <div class="main-buttons">
+                
+                <div class="buttons ">
+                    <button class="button btn1"><li>Submit</li> </button>
+                    <button class="button btn2"><li>Clear</li></button>
+                </div>
             </div>
 
-        </div>
-        <div class="box1">
-            <p>Result</p>
+        </form>
+        <div class="box1" method="get" action="/output">
+            <p>Output</p>
             <div class="textcontent ">
-                <textarea class="form-control" id="textarea1" name="textarea" rows="4" spellcheck="" placeholder="Enter Your Cipher Here ... "></textarea>
+                <textarea class="form-control" id="textarea1" name="textarea" rows="4" spellcheck="" placeholder="Your Output Here ... "></textarea>
             </div>
         </div>
     </div>

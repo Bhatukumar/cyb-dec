@@ -57,6 +57,7 @@ display: flex;
     background-color: lightgrey;
     height: 33vw;
     width: 100%;
+    margin: auto;
     justify-content: space-around ;
     align-items: center; 
 }
@@ -64,9 +65,15 @@ display: flex;
 .box{
     background-color: grey;
     width: 600px;
+    height: 300px;
     border-radius: 5px;
     border: 2px solid black;
     box-sizing: border-box;
+    text-align: center;
+}
+.box p{
+    padding: 2px;
+    font-size: 20px;
 }
 
 .textcontent{
@@ -80,7 +87,7 @@ display: flex;
 
 .form-control{
     height: 70%;
-    margin: auto;
+    margin: auto ;
     width: 90%;
     border-radius: 10px;
     line-height: 2;
@@ -90,15 +97,22 @@ display: flex;
 /* .form-control:focus-visible{
     outline-style: auto;
 } */
-.buttons{
-    display: flex;
-    justify-content: space-around;
+.main-buttons{
+    background-color: magenta;
+    display: grid;
+    justify-content: center;
     align-items: center;
-    height: 100px;
+    width: 20%;
+    height: 300px;
+}
+.buttons{    
+    
     /* background-color: lawngreen; */
-    margin: auto;
+    
 }
 .button{
+    padding: auto;
+    margin: auto;
     font-size: 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -112,7 +126,7 @@ display: flex;
     background-color: rgba(77, 230, 241, 0.827);
 }
 .buttons button li{
-    margin: 5px;
+    padding: 5px;
     text-decoration: none;
     list-style: none;
     
@@ -121,6 +135,7 @@ display: flex;
 .box1{
     background-color: orange;
     width: 600px;
+    height: 300px;
     border-radius: 5px;
     border: 2px solid black;
     box-sizing: border-box;
@@ -129,7 +144,7 @@ display: flex;
 .box1 p{
     padding: 2px;
     font-size: 20px;
-    
+
 }
 
 
