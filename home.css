@@ -57,7 +57,7 @@ display: flex;
     background-color: lightgrey;
     height: 33vw;
     width: 100%;
-    justify-content: center ;
+    justify-content: space-around ;
     align-items: center; 
 }
 
@@ -115,6 +115,20 @@ display: flex;
     margin: 5px;
     text-decoration: none;
     list-style: none;
+    
+}
+
+.box1{
+    background-color: orange;
+    width: 600px;
+    border-radius: 5px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    text-align: center;
+}
+.box1 p{
+    padding: 2px;
+    font-size: 20px;
     
 }
 
