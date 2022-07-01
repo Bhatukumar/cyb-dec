@@ -67,15 +67,6 @@ window.onclick = function (event) {
             }
         }
     }
-
-}
-
-function myFunction1() {
-    document.getElementById("myDropdown1").classList.toggle("show1");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function (event) {
     if (!event.target.matches('.dropbtn1')) {
         var dropdowns = document.getElementsByClassName("dropdown-content1");
         var i;
@@ -87,4 +78,59 @@ window.onclick = function (event) {
         }
     }
 
+    // INPUT
+    if(event.target.matches('.hex')){
+        document.getElementById('dropp').innerText = 'Hex';
+    }
+    if(event.target.matches('.bs64')){
+        document.getElementById('dropp').innerText = 'Base64';
+    }
+    if(event.target.matches('.r13')){
+        document.getElementById('dropp').innerText = 'ROT13';
+    }
+    if(event.target.matches('.bin')){
+        document.getElementById('dropp').innerText = 'Binary';
+    }
+    if(event.target.matches('.dec')){
+        document.getElementById('dropp').innerText = 'Decimal';
+    }
+    if(event.target.matches('.lcase')){
+        document.getElementById('dropp').innerText = 'Lower Case';
+    }
+    if(event.target.matches('.ucase')){
+        document.getElementById('dropp').innerText = 'Upper Case';
+    }
+    if(event.target.matches('.morse')){
+        document.getElementById('dropp').innerText = 'Morse Code';
+    }
+
+    // OUTPUT
+    if(event.target.matches('.hex1')){
+        document.getElementById('dropp1').innerText = 'Hex';
+    }
+    if(event.target.matches('.bs641')){
+        document.getElementById('dropp1').innerText = 'Base64';
+    }
+    if(event.target.matches('.r131')){
+        document.getElementById('dropp1').innerText = 'ROT13';
+    }
+    if(event.target.matches('.bin1')){
+        document.getElementById('dropp1').innerText = 'Binary';
+    }
+    if(event.target.matches('.dec1')){
+        document.getElementById('dropp1').innerText = 'Decimal';
+    }
+    if(event.target.matches('.lcase1')){
+        document.getElementById('dropp1').innerText = 'Lower Case';
+    }
+    if(event.target.matches('.ucase1')){
+        document.getElementById('dropp1').innerText = 'Upper Case';
+    }
+    if(event.target.matches('.morse1')){
+        document.getElementById('dropp1').innerText = 'Morse Code';
+    }
+}
+
+function myFunction1() {
+    document.getElementById("myDropdown1").classList.toggle("show1");
 }

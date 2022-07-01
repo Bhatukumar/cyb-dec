@@ -100,6 +100,7 @@
 
 /* dropdown buttons styling */
 .dropbtn {
+    min-width: 120px;
     background-color: #3498DB;
     color: white;
     padding: 16px;
@@ -147,6 +148,7 @@
 /* second dropdown button   */
 
 .dropbtn1 {
+    min-width: 120px;
     background-color: #3498DB;
     color: white;
     padding: 16px;
