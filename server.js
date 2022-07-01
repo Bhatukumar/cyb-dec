@@ -6,19 +6,21 @@ var port = "8000";
 http.createServer(function (req, res) {
 
     if (req.method == 'POST') {
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        req.on('end', () => {
-            console.log(body);
-            res.end('ok');
-        });
+        console.log(req.method + " " + req.url);
+        router.ans(req,res);
+        // let body = '';
+        // req.on('data', chunk => {
+        //     body += chunk.toString();
+        // });
+        // req.on('end', () => {
+        //     console.log(body);
+        //     res.end('ok');
+        // });
     } else if (req.method == 'GET') {
-        // console.log(req.method);
-        router.home(req, res);
+        console.log(req.method + " " + req.url);
+        router.html(req, res);
         router.css(req, res);
-        router.js(req, res);        
+        router.js(req, res);
     } else {
         res.end("Invalid Request: " + req.method);
     }
