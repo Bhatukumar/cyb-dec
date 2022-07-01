@@ -94,6 +94,7 @@
     /* display: flex; */
     /* float: left; */
     /* padding-left: 200px; */
+    
     vertical-align: middle;
 }
 
@@ -104,6 +105,7 @@
     padding: 16px;
     font-size: 16px;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
   }
   
@@ -139,12 +141,13 @@
 
   /* second dropdown button   */
 
-  .dropbtn1 {
+  .dropbtn1  {
     background-color: #3498DB;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
   }
   
@@ -308,6 +311,7 @@ textarea:focus::placeholder {
 .box-adjust-right {
     /* display: flex; */
     vertical-align: middle;
+
 }
 
 .padds1 {
