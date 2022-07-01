@@ -97,9 +97,9 @@
     vertical-align: middle;
 }
 
-.padds {
-    /* padding-left: 13%; */
-}
+/* .padds {
+    padding-left: 13%;
+} */
 
 .box {
     background-color: grey;
@@ -172,12 +172,11 @@ textarea:focus::placeholder {
     padding-left: 60px; */
 }
 
-.buttons {
+/* .buttons {
 
-    /* background-color: lawngreen; */
-    /* padding: 10px; */
-
-}
+    background-color: lawngreen;
+    padding: 10px;
+} */
 
 .button1 {
     padding: 5px;
@@ -276,7 +275,7 @@ textarea:focus::placeholder {
     border-radius: 10px;
 }
 
-.logofooter {}
+/* .logofooter {} */
 
 .logofooter a {
     text-decoration: none;
@@ -294,7 +293,7 @@ textarea:focus::placeholder {
     border-radius: 10px;
 }
 
-.fnav-list {}
+/* .fnav-list {} */
 
 .fnav-list ul li {
     list-style: none;

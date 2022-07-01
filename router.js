@@ -3,7 +3,7 @@ var url = require("url");
 var fs = require('fs');
 var htmlHeader = { 'Content-Type': 'text/html' };
 
-function home(req, res) {
+function html(req, res) {
     var query_string = req.url;
 
     if (query_string === "/") {
@@ -93,13 +93,24 @@ function css(req, res) {
 }
 
 function js(req, res) {
-    if(req.url === "/home.js") {
-        fs.readFile('./home.js', function(err, data) {
-            res.writeHead(200, {'Content-Type': 'text/javascript', 'Content-Length': data.length});
+    if (req.url === "/home.js") {
+        fs.readFile('./home.js', function (err, data) {
+            res.writeHead(200, { 'Content-Type': 'text/javascript', 'Content-Length': data.length });
             res.write(data);
             res.end();
         });
     }
 }
 
-module.exports = { home, css, js};
+function ans(req, res) {
+    if(req.url === '/answer.me'){
+        console.log(req.data);
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        res.write(answer);
+        res.end();
+    }
+}
+
+const answer = "WAKDANDA FOREVER";
+
+module.exports = { html, css, js, ans };
