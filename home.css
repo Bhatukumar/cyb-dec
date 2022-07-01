@@ -1,68 +1,105 @@
-*{
+* {
     margin: 0;
     padding: 0;
-
 }
 
 /* navigation bar style    */
 
 
 
-.navbar{
-display: flex;
+.navbar {
+    display: flex;
+    top: 0;
 }
 
-.logo-space{
+.logo-space {
     display: flex;
     background-color: black;
-    width: 30%;
+    width: 100%;
+    height: 80px;
     text-align: center;
 }
-.logo{
+
+.logo {
     list-style: none;
     margin: auto;
 }
-.logo a{
+
+.logo a {
     text-decoration: none;
     color: white;
     font-size: 30px;
-
 }
 
-.nav-list{
+/* .nav-list {
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     background-color: black;
     width: 70%;
-}
-.nav-list ul{
-    display: flex; 
-    justify-content: space-between;
-}
+} */
 
-.nav-list ul li{
+/* .nav-list ul {
+    display: flex;
+    justify-content: space-between;
+} */
+
+/* .nav-list ul li {
     list-style: none;
     margin: 20px 50px;
-}
+} */
 
-.nav-list li a{
+/* .nav-list li a {
     text-decoration: none;
     color: white;
     font-size: 25px;
-}
+} */
 
-/* main body style   */
+
+/* 
+
+
+    Main body style
+
+
+ */
+
+
 .main-body {
     display: flex;
+    height: 75vh;
     background-color: lightgrey;
-    height: 33vw;
     width: 100%;
-    margin: auto;
-    justify-content: space-around ;
-    align-items: center; 
+    justify-content: space-around;
+    align-items: center;
 }
 
-.box{
+.all-boxes {
+    display: flex;
+    margin: auto;
+    /* height: fit-content; */
+    /* width: fit-content; */
+}
+
+.box-adjust-middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 130px;
+    padding-bottom: 135px; */
+}
+
+.box-adjust-left {
+    display: flex;
+    /* float: left; */
+    /* padding-left: 200px; */
+    vertical-align: middle;
+}
+
+.padds {
+    /* padding-left: 13%; */
+}
+
+.box {
     background-color: grey;
     width: 600px;
     height: 300px;
@@ -70,69 +107,107 @@ display: flex;
     border: 2px solid black;
     box-sizing: border-box;
     text-align: center;
-}
-.box p{
-    padding: 2px;
-    font-size: 20px;
+    float: left;
 }
 
-.textcontent{
+.box p {
+    /* padding: 2px; */
+    padding-left: 2px;
+    padding-top: 2px;
+    padding-right: 2px;
+    font-size: 30px;
+}
+
+.textcontent {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     text-align: center;
     /* background-color: blanchedalmond; */
-    height:300px;
-    
+    height: 270px;
+    /* line-height: 1;     */
 }
 
-.form-control{
+input:focus::placeholder {
+    color: transparent;
+}
+
+textarea:focus::placeholder {
+    color: transparent;
+}
+
+.form-control {
+    resize: none;
+    display: block;
     height: 70%;
-    margin: auto ;
+    margin: auto;
     width: 90%;
     border-radius: 10px;
-    line-height: 2;
+    line-height: 1;
+    font-size: large;
     border: 2px solid black;
-
+    text-align: center;
+    justify-content: center;
+    text-align-last: center;
+    /* -moz-text-align-last: center; */
+    white-space: nowrap;
+    padding-top: 10px;
 }
+
 /* .form-control:focus-visible{
     outline-style: auto;
 } */
-.main-buttons{
-    background-color: magenta;
-    display: grid;
+
+.main-buttons {
+    /* background-color: magenta; */
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 20%;
-    height: 300px;
+    height: 38px;
+    /* float: right; */
+    /* float: calc(); */
+    /* padding-top: 135px;
+    padding-left: 60px; */
 }
-.buttons{    
-    
+
+.buttons {
+
     /* background-color: lawngreen; */
-    
+    /* padding: 10px; */
+
 }
-.button{
-    padding: auto;
-    margin: auto;
+
+.button1 {
+    padding: 5px;
+    margin-right: 12px;
+    margin-left: 20px;
     font-size: 20px;
-    border-radius: 5px;
+    border-radius: 7px;
     cursor: pointer;
-
-}
-.btn1{
     background-color: greenyellow;
-
 }
-.btn2{
+
+.button2 {
+    padding: 5px;
+    margin-left: 12px;
+    margin-right: 20px;
+    font-size: 20px;
+    border-radius: 7px;
+    cursor: pointer;
     background-color: rgba(77, 230, 241, 0.827);
 }
-.buttons button li{
+
+/* .btn1 {
+    background-color: greenyellow;
     padding: 5px;
-    text-decoration: none;
-    list-style: none;
-    
 }
 
-.box1{
+.btn2 {
+    background-color: rgba(77, 230, 241, 0.827);
+    padding: 5px;
+} */
+
+.box1 {
     background-color: orange;
     width: 600px;
     height: 300px;
@@ -141,29 +216,56 @@ display: flex;
     box-sizing: border-box;
     text-align: center;
 }
-.box1 p{
-    padding: 2px;
-    font-size: 20px;
 
+.box-adjust-right {
+    display: flex;
+    vertical-align: middle;
 }
 
+.padds1 {
+    /* padding-right: 13%; */
+    display: flex;
+}
 
-/* footer style  */
+.area-d {
+    padding-bottom: 12px;
+}
+
+.box1 p {
+    /* padding: 2px; */
+    padding-left: 2px;
+    padding-top: 2px;
+    padding-right: 2px;
+    margin-bottom: 2px;
+    font-size: 30px;
+}
+
+/* 
+
+
+    footer style
+    
+    
+*/
 
 
 
 .footer {
+    position: absolute;
+    bottom: 0;
     height: 10vw;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color:rgba(10, 9, 16, 0.852);
+    background-color: rgba(10, 9, 16, 0.852);
 }
 
 
-.flogo{
+.flogo {
     display: flex;
+    /* flex-wrap: wrap; */
+    position: relative;
     justify-content: center;
     align-items: center;
     background-color: yellow;
@@ -172,14 +274,15 @@ display: flex;
     border-radius: 10px;
 }
 
-.logofooter {
-}
-.logofooter a{
+.logofooter {}
+
+.logofooter a {
     text-decoration: none;
     font-size: 40px;
+    color: black;
 }
 
-.fnav{
+.fnav {
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -189,20 +292,17 @@ display: flex;
     border-radius: 10px;
 }
 
-.fnav-list{
+.fnav-list {}
 
-}
-.fnav-list ul li{
+.fnav-list ul li {
     list-style: none;
+    padding: 10px;
     margin: auto;
 
 }
-.fnav-list ul li a{
+
+.fnav-list ul li a {
     text-decoration: none;
     color: black;
     font-size: 25px;
 }
-
-
-
-

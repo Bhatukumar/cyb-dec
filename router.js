@@ -27,6 +27,16 @@ function home(req, res) {
             res.end();
         });
 
+    } else if (query_string == '/ask.question' || query_string == '/ask.question.html') {
+
+        fs.readFile("./home.html", function (err, data) {
+            if (err) {
+                console.log(err);
+            }
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.write(data);
+            res.end();
+        });
     } else if (query_string == '/home' || query_string == '/home.html') {
 
         fs.readFile("./home.html", function (err, data) {
@@ -82,4 +92,14 @@ function css(req, res) {
     }
 }
 
-module.exports = { home, css };
+function js(req, res) {
+    if(req.url === "/home.js") {
+        fs.readFile('./home.js', function(err, data) {
+            res.writeHead(200, {'Content-Type': 'text/javascript', 'Content-Length': data.length});
+            res.write(data);
+            res.end();
+        });
+    }
+}
+
+module.exports = { home, css, js};
