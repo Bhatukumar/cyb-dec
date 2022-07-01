@@ -5,7 +5,7 @@ async function getAns(ciphertext) {
         type: "question",
         text: ciphertext
     }
-    
+
     let myPlain = await fetch('/answer.me', {
         method: 'POST',
         body: JSON.stringify(question),
@@ -14,7 +14,7 @@ async function getAns(ciphertext) {
         }
     })
 
-    if(!myPlain.ok){
+    if (!myPlain.ok) {
         throw new Error(`Request Failed with status: ${myPlain.status}`)
     }
 
@@ -26,9 +26,9 @@ function runFunk1() {
     var ciphertext = document.getElementById('ciphertext').value;
     if (ciphertext != "") {
         // send cipher and get output
-        getAns(ciphertext).then( data => {
+        getAns(ciphertext).then(data => {
             document.getElementById('plaintext').value = data;
-        });       
+        });
     } else {
         alert("Can't fool me, can You?");
     }
@@ -40,57 +40,51 @@ function runFunk2() {
     const element2 = document.getElementById('ciphertext').value;
     if (element1 != "") {
         document.getElementById('plaintext').value = "";
-    }if (element2 != "") {
+    } if (element2 != "") {
         document.getElementById('ciphertext').value = "";
-    } else if(element1 != "" || element2 != "") {
+    } else if (element1 != "" || element2 != "") {
         alert("Can you not play wise!\nNo Value to clear!");
     }
     return false;
 }
-function hex(input) {
-    var value;
-    // value = computation on input
-    return value;
-}
-
 
 
 // dropdown list function
 
 function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById("myDropdown").classList.toggle("show");
 }
 
 // Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
     }
-  }
-  
+
 }
 
-  function myFunction1() {
+function myFunction1() {
     document.getElementById("myDropdown1").classList.toggle("show1");
-  }
-  
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function(event) {
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
     if (!event.target.matches('.dropbtn1')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content1");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show1')) {
-          openDropdown.classList.remove('show1');
+        var dropdowns = document.getElementsByClassName("dropdown-content1");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show1')) {
+                openDropdown.classList.remove('show1');
+            }
         }
-      }
     }
-    
-  }
+
+}
