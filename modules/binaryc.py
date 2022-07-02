@@ -1,8 +1,8 @@
 
 
-def decode(input): 
+def binarytodecimal(input): 
     return int(input, 2) 
 
-def encode(input):
-    return 
+def binarytohex(input):
+    return hex(binarytodecimal(input))
 
