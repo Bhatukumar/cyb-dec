@@ -1,34 +1,34 @@
 'use strict'
 
+let counter = 0;
+let counter1 = 0;
+
 async function getAns(ciphertext) {
     const x = document.getElementById('dropp').innerText;
     const y = document.getElementById('dropp1').innerText;
-    if (x != "Dropdown" || y != "Dropdown") {
-        const question = {
-            type: "question",
-            text: ciphertext,
-            to: x,
-            from: y
-        }
-
-        let myPlain = await fetch('/answer.me', {
-            method: 'POST',
-            body: JSON.stringify(question),
-            headers: {
-                "content-Type": "application/json"
-            }
-        })
-
-        if (!myPlain.ok) {
-            throw new Error(`Request Failed with status: ${myPlain.status}`)
-        }
-
-        let answer = await myPlain.text();
-        return answer;
-    } else if (x == "Dropdown" || y == "Dropdown") {
-        alert("Select the types");
-        return null;
+    const question = {
+        type: "question",
+        text: ciphertext,
+        from: x,
+        to: y
     }
+
+    let myPlain = await fetch('/answer.me', {
+        method: 'POST',
+        body: JSON.stringify(question),
+        headers: {
+            "content-Type": "application/json"
+        }
+    })
+
+    if (!myPlain.ok) {
+        throw new Error(`Request Failed with status: ${myPlain.status}`)
+    }
+
+    let answer = await myPlain.text();
+    return answer;
+    alert("Select the types");
+    return null;
 }
 
 function runFunk1() {
@@ -38,9 +38,10 @@ function runFunk1() {
         getAns(ciphertext).then(data => {
             document.getElementById('plaintext').value = data;
         });
-    } else {
+    } else if(counter % 5 == 0) {
         alert("Can't fool me, can You?");
     }
+    counter++;
     return false;
 }
 
@@ -53,9 +54,10 @@ function runFunk2() {
     if (element2 != "") {
         document.getElementById('ciphertext').value = "";
     }
-    if (element1 == "" || element2 == "") {
+    if ((element1 == "" || element2 == "") && (counter1 % 5 == 0)) {
         alert("Can you not play wise!\nNo Value to clear!");
     }
+    counter1++;
     return false;
 }
 
@@ -103,6 +105,9 @@ window.onclick = function (event) {
         if (event.target.matches('.r13')) {
             document.getElementById('dropp').innerText = 'ROT13';
         }
+        if (event.target.matches('.plain')) {
+            document.getElementById('dropp').innerText = 'Plaintext';
+        }
     }
 
     // OUTPUT
@@ -121,6 +126,9 @@ window.onclick = function (event) {
         }
         if (event.target.matches('.r131')) {
             document.getElementById('dropp1').innerText = 'ROT13';
+        }
+        if (event.target.matches('.plain')) {
+            document.getElementById('dropp1').innerText = 'Plaintext';
         }
     }
 
