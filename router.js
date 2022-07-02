@@ -103,7 +103,7 @@ function ans(req, res) {
     var anss = '';
     if (req.url === '/answer.me') {
         let question = '';
-        
+
         req.on('data', chunk => {
             question += chunk.toString();
             const pythonScript = runScript(question);
@@ -117,9 +117,11 @@ function ans(req, res) {
             });
         });
 
+
+
         req.on('end', () => {
             console.log(question);
-            res.write(answer + " " + anss);
+            res.write(anss);
             res.end();
         });
     }
