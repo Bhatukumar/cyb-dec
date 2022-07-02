@@ -7,8 +7,9 @@ async function getAns(ciphertext) {
         const question = {
             type: "question",
             text: ciphertext,
-            to: x,
-            from: y
+            from: x,
+            to: y
+            
         }
 
         let myPlain = await fetch('/answer.me', {
