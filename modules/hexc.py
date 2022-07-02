@@ -1,17 +1,17 @@
 import codecs
 import base64
 
-def hextoplaintext(input):
+def hexToPlaintext(input):
     return codecs.decode(input,'hex')
 
-def hextobase32(input):
-    return base64.b32encode(hextoplaintext(input))
+def hexToBase32(input):
+    return base64.b32encode(hexToPlaintext(input))
 
-def hextobase64(input):
-    return base64.b64encode(hextoplaintext(input))
+def hexToBase64(input):
+    return base64.b64encode(hexToPlaintext(input))
 
-def hextobase85(input):
-    return base64.b85encode(hextoplaintext(input))
+def hexToBase85(input):
+    return base64.b85encode(hexToPlaintext(input))
 
-def hextorot13(input):
-    return codecs.encode(hextoplaintext(input),'rot13')
+def hexToRot13(input):
+    return codecs.encode(hexToPlaintext(input),'rot13')
