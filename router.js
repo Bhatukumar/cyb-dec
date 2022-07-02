@@ -1,23 +1,16 @@
 var renderer = require("./renderer.js");
 var url = require("url");
 var fs = require('fs');
+const { spawn } = require("child_process");
+const path = require("path");
 var htmlHeader = { 'Content-Type': 'text/html' };
+
 
 function html(req, res) {
     var query_string = req.url;
-
+    
     if (query_string === "/") {
-
-        // if (req.method.toLowerCase() === "get") {
-
-        //     res.writeHead(200, htmlHeader);
-
-        //     renderer.view("header", {}, res);
-        //     renderer.view("footer", {}, res);
-
-        //     res.end();
-        // }
-
+        
         fs.readFile("./home.html", function (err, data) {
             if (err) {
                 console.log(err);
@@ -26,9 +19,9 @@ function html(req, res) {
             res.write(data);
             res.end();
         });
-
+        
     } else if (query_string == '/ask.question' || query_string == '/ask.question.html') {
-
+        
         fs.readFile("./home.html", function (err, data) {
             if (err) {
                 console.log(err);
@@ -38,7 +31,7 @@ function html(req, res) {
             res.end();
         });
     } else if (query_string == '/home' || query_string == '/home.html') {
-
+        
         fs.readFile("./home.html", function (err, data) {
             if (err) {
                 console.log(err);
@@ -48,7 +41,7 @@ function html(req, res) {
             res.end();
         });
     } else if (query_string == '/about' || query_string == '/about.html') {
-
+        
         fs.readFile("./about.html", function (err, data) {
             if (err) {
                 console.log(err);
@@ -58,7 +51,7 @@ function html(req, res) {
             res.end();
         });
     } else if (query_string == '/contact' || query_string == '/contact.html') {
-
+        
         fs.readFile("./contact.html", function (err, data) {
             if (err) {
                 console.log(err);
@@ -102,12 +95,29 @@ function js(req, res) {
     }
 }
 
+function runScript(question){
+    return spawn('python', 'controller.py', question);
+}
+
 function ans(req, res) {
-    if(req.url === '/answer.me'){
-        console.log(req.data);
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        res.write(answer);
-        res.end();
+    var anss = '';
+    if (req.url === '/answer.me') {
+        let question = '';
+        req.on('data', chunk => {
+            question += chunk.toString();
+        });
+        const pythonScript = runScript(question);
+        pythonScript.stdin.write(question);
+        pythonScript.stdin.end();
+        pythonScript.stdout.on(`data`, (data) => {
+            console.log(String.fromCharCode.apply(null, data));
+            anss = data;
+        });
+        req.on('end', () => {
+            console.log(question);
+            res.write(answer + " " + anss);
+            res.end();
+        });
     }
 }
 

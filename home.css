@@ -239,6 +239,7 @@ textarea:focus::placeholder {
 }
 
 .form-control {
+    scroll-behavior: smooth;
     resize: none;
     display: block;
     height: 70%;

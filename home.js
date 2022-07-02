@@ -1,25 +1,34 @@
 'use strict'
 
 async function getAns(ciphertext) {
-    const question = {
-        type: "question",
-        text: ciphertext
-    }
-
-    let myPlain = await fetch('/answer.me', {
-        method: 'POST',
-        body: JSON.stringify(question),
-        headers: {
-            "content-Type": "application/json"
+    const x = document.getElementById('dropp').innerText;
+    const y = document.getElementById('dropp1').innerText;
+    if (x != "Dropdown" || y != "Dropdown") {
+        const question = {
+            type: "question",
+            text: ciphertext,
+            to: x,
+            from: y
         }
-    })
 
-    if (!myPlain.ok) {
-        throw new Error(`Request Failed with status: ${myPlain.status}`)
+        let myPlain = await fetch('/answer.me', {
+            method: 'POST',
+            body: JSON.stringify(question),
+            headers: {
+                "content-Type": "application/json"
+            }
+        })
+
+        if (!myPlain.ok) {
+            throw new Error(`Request Failed with status: ${myPlain.status}`)
+        }
+
+        let answer = await myPlain.text();
+        return answer;
+    } else if (x == "Dropdown" || y == "Dropdown") {
+        alert("Select the types");
+        return null;
     }
-
-    let answer = await myPlain.text();
-    return answer;
 }
 
 function runFunk1() {
@@ -40,16 +49,15 @@ function runFunk2() {
     const element2 = document.getElementById('ciphertext').value;
     if (element1 != "") {
         document.getElementById('plaintext').value = "";
-    } if (element2 != "") {
+    }
+    if (element2 != "") {
         document.getElementById('ciphertext').value = "";
-    } else if (element1 != "" || element2 != "") {
+    }
+    if (element1 == "" || element2 == "") {
         alert("Can you not play wise!\nNo Value to clear!");
     }
     return false;
 }
-
-
-// dropdown list function
 
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -79,56 +87,43 @@ window.onclick = function (event) {
     }
 
     // INPUT
-    if(event.target.matches('.hex')){
-        document.getElementById('dropp').innerText = 'Hex';
-    }
-    if(event.target.matches('.bs64')){
-        document.getElementById('dropp').innerText = 'Base64';
-    }
-    if(event.target.matches('.r13')){
-        document.getElementById('dropp').innerText = 'ROT13';
-    }
-    if(event.target.matches('.bin')){
-        document.getElementById('dropp').innerText = 'Binary';
-    }
-    if(event.target.matches('.dec')){
-        document.getElementById('dropp').innerText = 'Decimal';
-    }
-    if(event.target.matches('.lcase')){
-        document.getElementById('dropp').innerText = 'Lower Case';
-    }
-    if(event.target.matches('.ucase')){
-        document.getElementById('dropp').innerText = 'Upper Case';
-    }
-    if(event.target.matches('.morse')){
-        document.getElementById('dropp').innerText = 'Morse Code';
+    {
+        if (event.target.matches('.hex')) {
+            document.getElementById('dropp').innerText = 'Hex';
+        }
+        if (event.target.matches('.bs64')) {
+            document.getElementById('dropp').innerText = 'Base64';
+        }
+        if (event.target.matches('.bs32')) {
+            document.getElementById('dropp').innerText = 'Base32';
+        }
+        if (event.target.matches('.bs85')) {
+            document.getElementById('dropp').innerText = 'Base85';
+        }
+        if (event.target.matches('.r13')) {
+            document.getElementById('dropp').innerText = 'ROT13';
+        }
     }
 
     // OUTPUT
-    if(event.target.matches('.hex1')){
-        document.getElementById('dropp1').innerText = 'Hex';
+    {
+        if (event.target.matches('.hex1')) {
+            document.getElementById('dropp1').innerText = 'Hex';
+        }
+        if (event.target.matches('.bs641')) {
+            document.getElementById('dropp1').innerText = 'Base64';
+        }
+        if (event.target.matches('.bs321')) {
+            document.getElementById('dropp1').innerText = 'Base32';
+        }
+        if (event.target.matches('.bs851')) {
+            document.getElementById('dropp1').innerText = 'Base85';
+        }
+        if (event.target.matches('.r131')) {
+            document.getElementById('dropp1').innerText = 'ROT13';
+        }
     }
-    if(event.target.matches('.bs641')){
-        document.getElementById('dropp1').innerText = 'Base64';
-    }
-    if(event.target.matches('.r131')){
-        document.getElementById('dropp1').innerText = 'ROT13';
-    }
-    if(event.target.matches('.bin1')){
-        document.getElementById('dropp1').innerText = 'Binary';
-    }
-    if(event.target.matches('.dec1')){
-        document.getElementById('dropp1').innerText = 'Decimal';
-    }
-    if(event.target.matches('.lcase1')){
-        document.getElementById('dropp1').innerText = 'Lower Case';
-    }
-    if(event.target.matches('.ucase1')){
-        document.getElementById('dropp1').innerText = 'Upper Case';
-    }
-    if(event.target.matches('.morse1')){
-        document.getElementById('dropp1').innerText = 'Morse Code';
-    }
+
 }
 
 function myFunction1() {

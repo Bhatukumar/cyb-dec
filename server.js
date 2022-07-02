@@ -4,18 +4,9 @@ var router = require("./router");
 var port = "8000";
 
 http.createServer(function (req, res) {
-
     if (req.method == 'POST') {
         console.log(req.method + " " + req.url);
         router.ans(req,res);
-        // let body = '';
-        // req.on('data', chunk => {
-        //     body += chunk.toString();
-        // });
-        // req.on('end', () => {
-        //     console.log(body);
-        //     res.end('ok');
-        // });
     } else if (req.method == 'GET') {
         console.log(req.method + " " + req.url);
         router.html(req, res);
@@ -26,4 +17,4 @@ http.createServer(function (req, res) {
     }
 }).listen(port);
 
-console.log("Server started in localhost:" + port + "\npress Crtl+C to terminate....");
+console.log("Server started in localhost:" + port + "\npress Crtl+C to terminate...."); 
