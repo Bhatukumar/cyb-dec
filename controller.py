@@ -1,7 +1,7 @@
+from cgitb import text
 import sys
 import json
-from typing import Type
-from modules import base32c, base64c as bs64
+from modules import base64c as bs64
 from modules import base32c as bs32
 from modules import base85 as bs85
 from modules import hexc as hex
@@ -10,34 +10,48 @@ from modules import plaintext as pt
 
 
 def main():
-    print("Welcome")
+    # print("Welcome")
+    # sys.stdout.write("Welcome")
     question = json.loads(sys.argv[1])
     Type = readType(question)
-    sys.stdout.write(Type)
-    sys.stdout.write("\n")
+    # sys.stdout.write(Type)
+    # sys.stdout.write("\n")
     Text = readText(question)
-    sys.stdout.write(Text)
-    sys.stdout.write("\n")
+    # sys.stdout.write(Text)
+    # sys.stdout.write("\n")
     From = readFrom(question)
-    sys.stdout.write(From)
-    sys.stdout.write("\n")
+    # sys.stdout.write(From)
+    # sys.stdout.write("\n")
     To = readTo(question)
-    sys.stdout.write(To)
-    sys.stdout.write("\n")
+    # sys.stdout.write(To)
+    # sys.stdout.write("\n")
 
-    ans = work(Text, From, To)
+    # ans = json.dumps({
+    #     "type":"answer",
+    #     "text":str(work(Text, From, To))
+    # })
+    # ans = "HEELO WAKANDA"
+    ans = str(work(Text, From, To))
     sys.stdout.write(ans)
     # sys.stdout.write(str(question['type']))
 
 
 def readType(y):
     return str(y['type'])
+
+
 def readText(y):
     return str(y['text'])
+
+
 def readFrom(y):
     return str(y['from'])
+
+
 def readTo(y):
     return str(y['to'])
+
+
 def work(Text, From, To):
 
     if From == "Plaintext":
@@ -109,7 +123,7 @@ def work(Text, From, To):
             return bs85.base85ToBase64(Text)
         elif To == "ROT13":
             return bs85.base85ToRot13(Text)
-        
+
     if From == "ROT13":
         if To == "ROT13":
             return Text
@@ -123,6 +137,9 @@ def work(Text, From, To):
             return rot13.rot13ToBase85(Text)
         elif To == "Hex":
             return rot13.rot13ToHex(Text)
+
     return False
+
+
 if __name__ == '__main__':
     main()

@@ -13,7 +13,7 @@ async function getAns(ciphertext) {
         to: y
     }
 
-    let myPlain = await fetch('/answer.me', {
+    var myPlain = await fetch('/answer.me', {
         method: 'POST',
         body: JSON.stringify(question),
         headers: {
@@ -21,24 +21,24 @@ async function getAns(ciphertext) {
         }
     })
 
-    if (!myPlain.ok) {
+    if(!myPlain.ok){
         throw new Error(`Request Failed with status: ${myPlain.status}`)
     }
 
     let answer = await myPlain.text();
     return answer;
-    alert("Select the types");
-    return null;
 }
+
 
 function runFunk1() {
     var ciphertext = document.getElementById('ciphertext').value;
     if (ciphertext != "") {
         // send cipher and get output
-        getAns(ciphertext).then(data => {
+        getAns(ciphertext).then( data => {
+            // console.log(data);
             document.getElementById('plaintext').value = data;
         });
-    } else if(counter % 5 == 0) {
+    } else if (counter % 5 == 0) {
         alert("Can't fool me, can You?");
     }
     counter++;

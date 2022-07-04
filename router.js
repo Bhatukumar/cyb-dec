@@ -100,33 +100,31 @@ function runScript(question) {
 }
 
 function ans(req, res) {
+    var anssbuf = '';
     var anss = '';
+    var question = '';
     if (req.url === '/answer.me') {
-        let question = '';
 
         req.on('data', chunk => {
             question += chunk.toString();
+
             const pythonScript = runScript(question);
+
             pythonScript.stdout.on('data', (data) => {
-                anss = data.toString();
-                // console.log(data);
-                console.log(data.toString());
+                anssbuf += data.toString();
+                anss += anssbuf.toString();
+                console.log(anss);
+                // console.log(data.toString());
             });
-            pythonScript.on('error', function (err) {
-                reject(err)
+            pythonScript.on('exit', function (code) {
+                console.log('Child process exited with exit code ' + code);
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                console.log(anss);
+                res.write(anss);
+                res.end();
             });
-        });
-
-
-
-        req.on('end', () => {
-            console.log(question);
-            res.write(anss);
-            res.end();
         });
     }
 }
-
-const answer = "WAKDANDA FOREVER";
 
 module.exports = { html, css, js, ans };
