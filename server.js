@@ -1,7 +1,8 @@
 var http = require("http");
 var url = require('url');
 var router = require("./router");
-var port = "8000";
+const hostname = '127.0.0.1';
+const port = "8000";
 
 http.createServer(function (req, res) {
     if (req.method == 'POST') {
@@ -15,6 +16,7 @@ http.createServer(function (req, res) {
     } else {
         res.end("Invalid Request: " + req.method);
     }
-}).listen(port);
+}).listen(process.env.PORT || port);
 
-console.log("Server started in localhost:" + port + "\npress Crtl+C to terminate...."); 
+console.log(`Server running at http://${hostname}:${port}/`);
+// console.log("Server started in localhost:" + port + "\npress Crtl+C to terminate...."); 
