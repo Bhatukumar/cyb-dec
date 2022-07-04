@@ -1,15 +1,10 @@
-
-
-from dataclasses import replace
-
-
-def todecimal(input): 
+def toDec(input): 
     return int(input, 2) 
 
-def tohex(input):
-    return hex(todecimal(input)).replace('0x','')
+def toHex(input):
+    return hex(toDec(input)).replace('0x','')
 
-def toOctal(input):
+def toOct(input):
     return oct(int(input,2)).replace('0o','')
 
 def toPlaintext(input):
@@ -27,4 +22,4 @@ def toPlaintext(input):
 
     return str_data
 
-print(tohex('0101101'))
+# print(tohex('0101101'))

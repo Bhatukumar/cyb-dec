@@ -11,4 +11,4 @@ def toPlaintext(input):
     t = []
     for x in input.split(' '):
         t.append(chr(x))
-    return ''.join(t)
+    return ''.join(t) 

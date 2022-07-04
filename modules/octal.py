@@ -1,8 +1,8 @@
 
-def tobinary(Input):
+def toBin(Input):
     return int(Input,2)
 
-def toDecimal(Input):
+def toDec(Input):
     return int(Input,8)
 
 def toHex(Input):

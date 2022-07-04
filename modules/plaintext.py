@@ -1,6 +1,6 @@
 # input = "WAKANDA FOREVER"
     
-
+ 
 # def plaintextToBase32(input):
 #     return base64.b32encode(input)
 
