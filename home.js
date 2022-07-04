@@ -93,18 +93,28 @@ window.onclick = function (event) {
         if (event.target.matches('.hex')) {
             document.getElementById('dropp').innerText = 'Hex';
         }
-        if (event.target.matches('.bs64')) {
-            document.getElementById('dropp').innerText = 'Base64';
+        if (event.target.matches('.oct')) {
+            document.getElementById('dropp').innerText = 'Octal';
         }
-        if (event.target.matches('.bs32')) {
-            document.getElementById('dropp').innerText = 'Base32';
+        if (event.target.matches('.Decimal')) {
+            document.getElementById('dropp').innerText = 'Decimal';
         }
-        if (event.target.matches('.bs85')) {
-            document.getElementById('dropp').innerText = 'Base85';
+        if (event.target.matches('.binary')) {
+            document.getElementById('dropp').innerText = 'Binary';
         }
-        if (event.target.matches('.r13')) {
-            document.getElementById('dropp').innerText = 'ROT13';
-        }
+
+        // if (event.target.matches('.bs64')) {
+        //     document.getElementById('dropp').innerText = 'Base64';
+        // }
+        // if (event.target.matches('.bs32')) {
+        //     document.getElementById('dropp').innerText = 'Base32';
+        // }
+        // if (event.target.matches('.bs85')) {
+        //     document.getElementById('dropp').innerText = 'Base85';
+        // }
+        // if (event.target.matches('.r13')) {
+        //     document.getElementById('dropp').innerText = 'ROT13';
+        // }
         if (event.target.matches('.plain')) {
             document.getElementById('dropp').innerText = 'Plaintext';
         }
@@ -115,18 +125,27 @@ window.onclick = function (event) {
         if (event.target.matches('.hex1')) {
             document.getElementById('dropp1').innerText = 'Hex';
         }
-        if (event.target.matches('.bs641')) {
-            document.getElementById('dropp1').innerText = 'Base64';
+        if (event.target.matches('.oct1')) {
+            document.getElementById('dropp1').innerText = 'Octal';
         }
-        if (event.target.matches('.bs321')) {
-            document.getElementById('dropp1').innerText = 'Base32';
+        if (event.target.matches('.Decimal1')) {
+            document.getElementById('dropp1').innerText = 'Decimal';
         }
-        if (event.target.matches('.bs851')) {
-            document.getElementById('dropp1').innerText = 'Base85';
+        if (event.target.matches('.binary1')) {
+            document.getElementById('dropp1').innerText = 'Binary';
         }
-        if (event.target.matches('.r131')) {
-            document.getElementById('dropp1').innerText = 'ROT13';
-        }
+        // if (event.target.matches('.bs641')) {
+        //     document.getElementById('dropp1').innerText = 'Base64';
+        // }
+        // if (event.target.matches('.bs321')) {
+        //     document.getElementById('dropp1').innerText = 'Base32';
+        // }
+        // if (event.target.matches('.bs851')) {
+        //     document.getElementById('dropp1').innerText = 'Base85';
+        // }
+        // if (event.target.matches('.r131')) {
+        //     document.getElementById('dropp1').innerText = 'ROT13';
+        // }
         if (event.target.matches('.plain')) {
             document.getElementById('dropp1').innerText = 'Plaintext';
         }
