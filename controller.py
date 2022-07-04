@@ -1,4 +1,3 @@
-from cgitb import text
 import sys
 import json
 from modules import base64c as bs64
