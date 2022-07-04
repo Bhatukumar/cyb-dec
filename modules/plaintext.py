@@ -26,7 +26,7 @@ def toDec(input):
 def toOct(input):
     t = ''
     for x in input:
-        t += (oct(ord(x)).zfill(3))
+        t += (oct(ord(x)).replace("0o", "").zfill(3))
     return (t)
 
 def toBin(input):

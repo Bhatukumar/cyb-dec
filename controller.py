@@ -1,11 +1,14 @@
 import sys
 import json
-from modules import base64c as bs64
-from modules import base32c as bs32
-from modules import base85 as bs85
+# from modules import base64c as bs64
+# from modules import base32c as bs32
+# from modules import base85 as bs85
+# from modules import rot13c as rot13
 from modules import hexc as hex
-from modules import rot13c as rot13
 from modules import plaintext as pt
+from modules import octal as oct
+from modules import decimal as dec
+from modules import binaryc as bin
 
 
 def main():
@@ -22,18 +25,14 @@ def main():
 def readType(y):
     return str(y['type'])
 
-
 def readText(y):
     return str(y['text'])
-
 
 def readFrom(y):
     return str(y['from'])
 
-
 def readTo(y):
     return str(y['to'])
-
 
 def work(Text, From, To):
 
@@ -76,6 +75,42 @@ def work(Text, From, To):
             return hex.toDec(Text)
         elif To == "Binary":
             return hex.toBin(Text)
+
+    if From == "Octal":
+        if To == "Octal":
+            return Text
+        elif To == "Decimal":
+            return oct.toDec(Text)
+        elif To == "Binary":
+            return oct.toBin(Text)
+        elif To == "Hex":
+            return oct.toHex(Text)
+        elif To == "Plaintext":
+            return oct.toPlain(Text)
+
+    if From == "Decimal":
+        if To == "Deciaml":
+            return Text
+        elif To == "Hex":
+            return dec.toHex(Text)
+        elif To == "Octal":
+            return dec.toOct(Text)
+        elif To == "Binary":
+            return dec.toBin(Text)
+        elif To == "Plaintext":
+            return dec.toPlaintext(Text)
+
+    if From == "Binary":
+        if To == "Binary":
+            return Text
+        elif To == "Hex":
+            return bin.toHex(Text)
+        elif To == "Decimal":
+            return bin.toDec(Text)
+        elif To == "Plaintext":
+            return bin.toPlaintext(Text)
+        elif To == "Octal":
+            return bin.toOct(Text)        
 
     # if From == "Base32":
     #     if To == "Base32":
