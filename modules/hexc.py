@@ -1,17 +1,32 @@
 import codecs
 import base64
 
-def hexToPlaintext(input):
-    return codecs.decode(input,'hex')
+def toPlaintext(input):
+    return bytes.fromhex(input).decode('utf-8')
 
-def hexToBase32(input):
-    return base64.b32encode(hexToPlaintext(input))
+def toDec(input):
+    return int(input, 16)
 
-def hexToBase64(input):
-    return base64.b64encode(hexToPlaintext(input))
+def toOct(input):
+    return oct(int(input, 16))
 
-def hexToBase85(input):
-    return base64.b85encode(hexToPlaintext(input))
+def toBin(input):
+    return bin(int(input, 16))[2:].zfill(8)
 
-def hexToRot13(input):
-    return codecs.encode(hexToPlaintext(input),'rot13')
+
+# def hexToBase32(input):
+#     return base64.b32encode(hexToPlaintext(input))
+
+
+# def hexToBase64(input):
+#     return base64.b64encode(hexToPlaintext(input))
+
+
+# def hexToBase85(input):
+#     return base64.b85encode(hexToPlaintext(input))
+
+
+# def hexToRot13(input):
+#     return codecs.encode(hexToPlaintext(input), 'rot13')
+
+# print(hexToBin("ABAAE"))

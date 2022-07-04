@@ -113,13 +113,13 @@ function ans(req, res) {
             pythonScript.stdout.on('data', (data) => {
                 anssbuf += data.toString();
                 anss += anssbuf.toString();
-                console.log(anss);
+                // console.log(anss);
                 // console.log(data.toString());
             });
             pythonScript.on('exit', function (code) {
                 console.log('Child process exited with exit code ' + code);
                 res.writeHead(200, { 'Content-Type': 'application/json' });
-                console.log(anss);
+                // console.log(anss);
                 res.write(anss);
                 res.end();
             });
