@@ -98,6 +98,7 @@ window.onclick = function (event) {
         }
         if (event.target.matches('.Decimal')) {
             document.getElementById('dropp').innerText = 'Decimal';
+            document.getElementById('tye').remove();
         }
         if (event.target.matches('.binary')) {
             document.getElementById('dropp').innerText = 'Binary';
