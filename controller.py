@@ -41,15 +41,21 @@ def work(Text, From, To):
         if To == "Plaintext":
             return Text
         elif To == "Hex":
-            return pt.plaintextToHex(Text)
-        elif To == "Base32":
-            return pt.plaintextToBase32(Text)
-        elif To == "Base64":
-            return pt.plaintextToBase64(Text)
-        elif To == "Base85":
-            return pt.plaintextToBase85(Text)
-        elif To == "ROT13":
-            return pt.plaintextToRot13(Text)
+            return pt.toHex(Text)
+        # elif To == "Base32":
+        #     return pt.plaintextToBase32(Text)
+        # elif To == "Base64":
+        #     return pt.plaintextToBase64(Text)
+        # elif To == "Base85":
+        #     return pt.plaintextToBase85(Text)
+        # elif To == "ROT13":
+        #     return pt.plaintextToRot13(Text)
+        elif To == "Decimal":
+            return pt.toDec(Text)
+        elif To == "Octal":
+            return pt.toOct(Text)
+        elif To == "Binary":
+            return pt.toBin(Text)
 
     if From == "Hex":
         if To == "Hex":
