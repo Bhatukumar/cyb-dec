@@ -10,30 +10,14 @@ from modules import plaintext as pt
 
 
 def main():
-    # print("Welcome")
-    # sys.stdout.write("Welcome")
     question = json.loads(sys.argv[1])
     Type = readType(question)
-    # sys.stdout.write(Type)
-    # sys.stdout.write("\n")
     Text = readText(question)
-    # sys.stdout.write(Text)
-    # sys.stdout.write("\n")
     From = readFrom(question)
-    # sys.stdout.write(From)
-    # sys.stdout.write("\n")
     To = readTo(question)
-    # sys.stdout.write(To)
-    # sys.stdout.write("\n")
 
-    # ans = json.dumps({
-    #     "type":"answer",
-    #     "text":str(work(Text, From, To))
-    # })
-    # ans = "HEELO WAKANDA"
     ans = str(work(Text, From, To))
     sys.stdout.write(ans)
-    # sys.stdout.write(str(question['type']))
 
 
 def readType(y):
@@ -72,71 +56,77 @@ def work(Text, From, To):
         if To == "Hex":
             return Text
         elif To == "Plaintext":
-            return hex.hexToPlaintext(Text)
-        elif To == "Base32":
-            return hex.hexToBase32(Text)
-        elif To == "Base64":
-            return hex.hexToBase64(Text)
-        elif To == "Base85":
-            return hex.hexToBase85(Text)
-        elif To == "ROT13":
-            return hex.hexToRot13(Text)
+            return hex.toPlaintext(Text)
+        # elif To == "Base32":
+        #     return hex.hexToBase32(Text)
+        # elif To == "Base64":
+        #     return hex.hexToBase64(Text)
+        # elif To == "Base85":
+        #     return hex.hexToBase85(Text)
+        # elif To == "ROT13":
+        #     return hex.hexToRot13(Text)
+        elif To == "Octal":
+            return hex.toOct(Text)
+        elif To == "Decimal":
+            return hex.toDec(Text)
+        elif To == "Binary":
+            return hex.toBin(Text)
 
-    if From == "Base32":
-        if To == "Base32":
-            return Text
-        elif To == "Plaintext":
-            return bs32.base32ToPlaintext(Text)
-        elif To == "Base64":
-            return bs32.base32ToBase64(Text)
-        elif To == "Base85":
-            return bs32.base32ToBase85(Text)
-        elif To == "ROT13":
-            return bs32.base32ToRot13(Text)
-        elif To == "Hex":
-            return bs32.base32ToHex(Text)
+    # if From == "Base32":
+    #     if To == "Base32":
+    #         return Text
+    #     elif To == "Plaintext":
+    #         return bs32.base32ToPlaintext(Text)
+    #     elif To == "Base64":
+    #         return bs32.base32ToBase64(Text)
+    #     elif To == "Base85":
+    #         return bs32.base32ToBase85(Text)
+    #     elif To == "ROT13":
+    #         return bs32.base32ToRot13(Text)
+    #     elif To == "Hex":
+    #         return bs32.base32ToHex(Text)
 
-    if From == "Base64":
-        if To == "Base64":
-            return Text
-        elif To == "Plaintext":
-            return bs64.base64ToPlaintext(Text)
-        elif To == "Base32":
-            return bs64.base64ToBase32(Text)
-        elif To == "Base85":
-            return bs64.base64ToBase85(Text)
-        elif To == "Hex":
-            return bs64.base64ToHex(Text)
-        elif To == "ROT13":
-            return bs64.base64ToRot13(Text)
+    # if From == "Base64":
+    #     if To == "Base64":
+    #         return Text
+    #     elif To == "Plaintext":
+    #         return bs64.base64ToPlaintext(Text)
+    #     elif To == "Base32":
+    #         return bs64.base64ToBase32(Text)
+    #     elif To == "Base85":
+    #         return bs64.base64ToBase85(Text)
+    #     elif To == "Hex":
+    #         return bs64.base64ToHex(Text)
+    #     elif To == "ROT13":
+    #         return bs64.base64ToRot13(Text)
 
-    if From == "Base85":
-        if To == "Base85":
-            return Text
-        elif To == "Plaintext":
-            return bs85.base85ToPlaintext(Text)
-        elif To == "Hex":
-            return bs85.base85ToHex(Text)
-        elif To == "Base32":
-            return bs85.base85ToBase32(Text)
-        elif To == "Base64":
-            return bs85.base85ToBase64(Text)
-        elif To == "ROT13":
-            return bs85.base85ToRot13(Text)
+    # if From == "Base85":
+    #     if To == "Base85":
+    #         return Text
+    #     elif To == "Plaintext":
+    #         return bs85.base85ToPlaintext(Text)
+    #     elif To == "Hex":
+    #         return bs85.base85ToHex(Text)
+    #     elif To == "Base32":
+    #         return bs85.base85ToBase32(Text)
+    #     elif To == "Base64":
+    #         return bs85.base85ToBase64(Text)
+    #     elif To == "ROT13":
+    #         return bs85.base85ToRot13(Text)
 
-    if From == "ROT13":
-        if To == "ROT13":
-            return Text
-        elif To == "Plaintext":
-            return rot13.rot13ToPlaintext(Text)
-        elif To == "Base32":
-            return rot13.rot13ToBase32(Text)
-        elif To == "Base64":
-            return rot13.rot13ToBase64(Text)
-        elif To == "Base85":
-            return rot13.rot13ToBase85(Text)
-        elif To == "Hex":
-            return rot13.rot13ToHex(Text)
+    # if From == "ROT13":
+    #     if To == "ROT13":
+    #         return Text
+    #     elif To == "Plaintext":
+    #         return rot13.rot13ToPlaintext(Text)
+    #     elif To == "Base32":
+    #         return rot13.rot13ToBase32(Text)
+    #     elif To == "Base64":
+    #         return rot13.rot13ToBase64(Text)
+    #     elif To == "Base85":
+    #         return rot13.rot13ToBase85(Text)
+    #     elif To == "Hex":
+    #         return rot13.rot13ToHex(Text)
 
     return False
 
