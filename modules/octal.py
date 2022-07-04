@@ -1,6 +1,4 @@
 
-
-
 def tobinary(Input):
     return int(Input,2)
 
@@ -18,4 +16,4 @@ def toPlaintext(Input):
     return str_converted 
 
 
-print(toPlaintext("110145154154157040127157162154144"))
+# print(toPlaintext("110145154154157040127157162154144"))
