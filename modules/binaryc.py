@@ -1,8 +1,30 @@
 
 
-def binarytodecimal(input): 
+from dataclasses import replace
+
+
+def todecimal(input): 
     return int(input, 2) 
 
-def binarytohex(input):
-    return hex(binarytodecimal(input))
+def tohex(input):
+    return hex(todecimal(input)).replace('0x','')
 
+def toOctal(input):
+    return oct(int(input,2)).replace('0o','')
+
+def toPlaintext(input):
+ 
+    def BinaryToDecimal(binary):
+        string = int(binary, 2)
+        return string
+
+    bin_data = input
+    str_data =' '
+    for i in range(0, len(bin_data), 7):
+        temp_data = bin_data[i:i + 7] 
+        decimal_data = BinaryToDecimal(temp_data)
+        str_data = str_data + chr(decimal_data)
+
+    return str_data
+
+print(tohex('0101101'))
