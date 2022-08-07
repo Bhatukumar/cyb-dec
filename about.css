@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
 
@@ -6,50 +6,54 @@
 
 
 /* navigation style  */
-.navbar{
-display: flex;
+.navbar {
+    display: flex;
 }
 
-.logo-space{
+.logo-space {
     display: flex;
     background-color: black;
     width: 30%;
     text-align: center;
 }
-.logo{
+
+.logo {
     list-style: none;
     margin: auto;
 }
-.logo a{
+
+.logo a {
     text-decoration: none;
     color: white;
     font-size: 30px;
 
 }
 
-.nav-list{
+.nav-list {
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     background-color: black;
     width: 70%;
 }
-.nav-list ul{
-    display: flex; 
+
+.nav-list ul {
+    display: flex;
     justify-content: space-between;
 }
 
-.nav-list ul li{
+.nav-list ul li {
     list-style: none;
     margin: 25px 50px;
 }
 
-.nav-list li a{
+.nav-list li a {
     text-decoration: none;
     color: white;
     font-size: 30px;
 }
 
 /* Main body style   */
+/**/
 
 .body1 {
     background-color: skyblue;
