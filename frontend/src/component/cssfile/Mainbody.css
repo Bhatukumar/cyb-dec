@@ -1,0 +1,163 @@
+/* CSS Variables for easy theme management */
+:root {
+    --primary-color: #007bff;
+    --primary-color-hover: #0056b3;
+    --background-color: #eafaff;
+    --text-color: #333;
+    --border-color: #e5e5e5;
+    --light-background: #ffffff;
+    --textarea-border-color: #ccc;
+    --hover-background: #f1f1f1;
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif; /* Change to your desired font */
+    color: var(--text-color); /* Text color */
+    background-color: #d6d6d6; /* Background color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Body Styles */
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 755px;
+}
+
+/* Main Body Styles */
+.main-body {
+    padding: 20px; /* Consistent padding */
+    background-color: var(--background-color); /* Background color matching Header/Footer */
+    border: 1px solid var(--border-color); /* Border style */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    border-radius: 8px; /* Rounded corners */
+    width: 80%; /* Set width to 70% of the viewport */
+    height: auto; /* Allow height to adjust based on content */
+    margin: 20px auto; /* Center the main body */
+}
+
+/* All Boxes Container */
+.all-boxes {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between boxes */
+    gap: 20px; /* Space between boxes */
+    height: 100%;
+}
+
+/* Box Adjustments */
+.box-adjust-left, .box-adjust-middle, .box-adjust-right {
+    flex: 1; /* Equal width for all boxes */
+    margin: 10px; /* Margin between boxes */
+}
+
+.box-adjust-middle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Dropdown Styles */
+.dropdown, .dropdown1 {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn, .dropbtn1 {
+    background-color: var(--primary-color); /* Primary button color */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 16px; /* Font size */
+    font-weight: bold;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.dropdown-content, .dropdown-content1 {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: var(--light-background); /* Match with Header/Footer */
+    min-width: 160px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content, .dropdown1:hover .dropdown-content1 {
+    display: block; /* Show on hover */
+}
+
+.dropdown-content a, .dropdown-content1 a {
+    color: var(--text-color); /* Text color */
+    padding: 12px 16px; /* Padding for links */
+    text-decoration: none; /* No underline */
+    display: block; /* Block display */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.dropdown-content a:hover, .dropdown-content1 a:hover {
+    background-color: var(--hover-background); /* Background on hover */
+}
+
+
+/* Button Styles */
+.button1, .button2 {
+    background-color: var(--primary-color); /* Primary button color */
+    color: white; /* Text color */
+    border: none;
+    padding: 2px 20px;
+    border-radius: 5px; /* Match button styles */
+    cursor: pointer;
+    font-size: 16px; /* Font size */
+    font-weight: bold;
+    margin: 5px; /* Margin between buttons */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.button1:hover, .button2:hover {
+    background-color: var(--primary-color-hover); /* Darker shade on hover */
+}
+
+/* Textarea Styles */
+textarea {
+    width: 95%; /* Increase width to 95% for a larger textarea */
+    padding: 10px; /* Padding */
+    border: 1px solid var(--textarea-border-color); /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    resize: none; /* Disable resizing */
+    font-size: 16px; /* Font size */
+    margin-top: 10px; /* Margin above textarea */
+    height: 150px; /* Set a specific height for the textarea */
+}
+
+/* Area Description Styles */
+.area-d {
+    margin-bottom: 5px; /* Space below the description */
+}
+
+/* Padding Classes */
+.padds, .padds1 {
+    margin: 10px 0; /* Vertical margin */
+    height: 100%;
+}
+
+/* Box Styles */
+.box, .box1 {
+    margin-bottom: 20px; /* Space below each box */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main-body{
+        padding: 0 10px;
+    }
+    .all-boxes {
+        flex-direction: column; /* Stack boxes on smaller screens */
+    }
+    .box-adjust-left, .box-adjust-middle, .box-adjust-right {
+        margin: 0; /* Remove margin for stacked layout */
+    }
+}

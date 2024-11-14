@@ -1,0 +1,90 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-bg-color: rgb(43, 42, 42);
+    --link-color: white;
+    --hover-color: #f6ffce;
+    --font-size-large: x-large;
+    --font-size-xx-large: xx-large;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: var(--primary-bg-color); /* Dark background color */
+  color: white; /* Text color */
+  padding:  20px; /* Padding for top/bottom and left/right */
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align items */
+}
+
+.footer-container {
+  max-width: 1200px; /* Max width for the footer */
+  width: 100%; /* Full width */
+  display: flex; /* Flexbox for layout */
+  /* flex-direction: column; Stack items vertically */
+  justify-content: space-around;
+  align-items: center; /* Center align items */
+}
+
+.logo-section {
+  margin-bottom: 20px; /* Space below the logo */
+}
+
+.logo-section a {
+  font-size: 28px; /* Logo font size */
+  font-weight: bold; /* Bold font */
+  /* color: #ffcc00;  */
+  text-decoration: none; /* Remove underline */
+}
+
+.footer-nav {
+  margin-bottom: 20px; /* Space below the navigation */
+}
+
+.footer-nav ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  display: flex; /* Flexbox for horizontal layout */
+  justify-content: center; /* Center align items */
+}
+
+.footer-nav li {
+  margin: 0 15px; /* Space between navigation items */
+}
+
+.footer-nav a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Font size for links */
+  transition: color 0.3s; /* Transition for hover effect */
+}
+
+.footer-nav a:hover {
+  color: #ffcc00; /* Change color on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center align items */
+  }
+
+  .footer-nav ul {
+    flex-direction: column; /* Stack navigation items vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .footer-nav li {
+    margin: 5px 0; /* Space between navigation items */
+  }
+
+  
+}
